@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<title>Fotbollscup</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #ddd;
+}
+
+button.active {
+  background: #007bff;
+  color: white;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Fotbollscup 2026</h1>
+
+  <div class="tabs">
+    <button onclick="showTab('lag')" id="btn-lag" class="active">Lag</button>
+    <button onclick="showTab('schema')" id="btn-schema">Schema</button>
+    <button onclick="showTab('info')" id="btn-info">Info</button>
+  </div>
+
+  <!-- Lag -->
+  <div id="lag" class="tab active">
+    <h2>Lagindelning</h2>
+
+    <div class="team">
+      <div>
+        <h3>Lag 1</h3>
+        <ul>
+          <li>Spelare 1</li>
+          <li>Spelare 2</li>
+          <li>Spelare 3</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Lag 2</h3>
+        <ul>
+          <li>Spelare 4</li>
+          <li>Spelare 5</li>
+          <li>Spelare 6</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schema -->
+  <div id="schema" class="tab">
+    <h2>Spelschema</h2>
+    <ul>
+      <li>10:00 – Lag 1 vs Lag 2</li>
+      <li>11:00 – Lag 1 vs Lag 2</li>
+      <li>12:00 – Final</li>
+    </ul>
+  </div>
+
+  <!-- Info -->
+  <div id="info" class="tab">
+    <h2>Info</h2>
+    <p><b>Datum:</b> 15 juni 2026</p>
+    <p><b>Plats:</b> Fotbollsplan</p>
+    <p>Medtag vattenflaska och kom i tid.</p>
+  </div>
+
+</div>
+
+<script>
+function showTab(tabId) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+
+  document.getElementById(tabId).classList.add("active");
+  document.getElementById("btn-" + tabId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
+``
